@@ -1,0 +1,80 @@
+export const ADVISORIES = [
+  {
+    "id": "CVE-2026-109618",
+    "title": "Cuando la memoria se agota",
+    "type": "Core",
+    "severity": "Crítica",
+    "date": "21 OCT 2026",
+    "score": "9.2",
+    "cvss": "CVSS 4.0",
+    "summary": "Un fallo al gestionar la falta de memoria puede dejar datos internos a medio inicializar. Su limpieza posterior puede desembocar en ejecución remota de código.",
+    "condition": "RCE demostrada en Apache mod_php antes de ejecutar código de la aplicación. FPM también se considera susceptible, aunque este aviso no demuestra un exploit completo para esa SAPI.",
+    "fix": "Actualizar en cada rama a 8.2.35, 8.3.36, 8.4.27 o 8.5.12, o instalar el paquete corregido del proveedor.",
+    "url": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+  },
+  {
+    "id": "CVE-2026-109619",
+    "title": "La siguiente petición hereda el fallo",
+    "type": "Core",
+    "severity": "Crítica",
+    "date": "21 OCT 2026",
+    "score": "9.2",
+    "cvss": "CVSS 4.0",
+    "summary": "Un worker puede conservar referencias a memoria ya liberada de una petición anterior. Acceder a ese estado obsoleto puede permitir ejecución remota de código.",
+    "condition": "Las peticiones implicadas deben llegar al mismo worker. El aviso confirma RCE en rutas de sesiones con mod_php y FPM; el resultado depende del estado y la configuración.",
+    "fix": "Mismas versiones corregidas que CVE-2026-109618. Las mitigaciones parciales no sustituyen la actualización.",
+    "url": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+  },
+  {
+    "id": "CVE-2026-115560",
+    "title": "Una combinación inusual de sesiones",
+    "type": "Sesiones",
+    "severity": "En seguimiento",
+    "date": "23 OCT 2026",
+    "score": "—",
+    "cvss": "Sin puntuación en el aviso",
+    "summary": "El aviso informativo describe un posible vector RCE al cambiar en ejecución el serializador de sesiones de php_binary o php_serialize a php con el progreso de subida activo.",
+    "condition": "Requiere esa combinación concreta de configuración y código antes de session_start(). No implica que todas las aplicaciones con sesiones estén expuestas.",
+    "fix": "PHP recomienda session.upload_progress.enabled=0 hasta la siguiente corrección regular. Al corte editorial, el aviso completo y el parche están pendientes.",
+    "url": "https://www.php.net/archive/2026.php"
+  },
+  {
+    "id": "CVE-2026-111497",
+    "title": "El riesgo también viaja en las dependencias",
+    "type": "Windows",
+    "severity": "Revisar paquete",
+    "date": "26 OCT 2026",
+    "score": "—",
+    "cvss": "Dependencia Brotli",
+    "summary": "Una escritura fuera de límites en el decodificador Brotli afecta a paquetes PHP de Windows que incorporan esa dependencia vulnerable.",
+    "condition": "El decodificador es alcanzable desde cURL cuando se habilita la descompresión automática de respuestas HTTP; esa opción no está activa por defecto en cURL.",
+    "fix": "Paquetes Windows 8.2.35-1, 8.3.36-1, 8.4.27-1 y 8.5.12-1 incluyen Brotli 1.2.1. El sufijo -1 cambia el paquete, no la versión del runtime.",
+    "url": "https://www.php.net/archive/2026.php"
+  },
+  {
+    "id": "CVE-2026-91766",
+    "title": "Credenciales que cruzan de origen",
+    "type": "Streams",
+    "severity": "Moderada",
+    "date": "24 SEP 2026",
+    "score": "5.9",
+    "cvss": "CVSS 3.1",
+    "summary": "El wrapper HTTP podía reenviar cabeceras de autenticación y cookies a otro origen al seguir una redirección, filtrando credenciales.",
+    "condition": "Afecta a aplicaciones que envían esas cabeceras con streams HTTP y siguen redirecciones. También puede producirse una degradación de HTTPS a HTTP.",
+    "fix": "Corregido en 8.2.34, 8.3.35, 8.4.26 y 8.5.11. Actualizar además por los avisos posteriores de octubre.",
+    "url": "https://github.com/php/php-src/security/advisories/GHSA-fpwc-w8rq-cr92"
+  },
+  {
+    "id": "CVE-2026-17545",
+    "title": "Un nombre de archivo, un worker bloqueado",
+    "type": "Windows",
+    "severity": "Moderada",
+    "date": "24 SEP 2026",
+    "score": "6.9",
+    "cvss": "CVSS 4.0",
+    "summary": "Ciertas rutas con nombres reservados de dispositivos Windows pueden abrir un dispositivo en lugar de un archivo y bloquear peticiones.",
+    "condition": "La aplicación debe permitir que entradas del usuario alcancen las operaciones de archivos o streams afectadas. El impacto descrito es denegación de servicio.",
+    "fix": "Corregido en 8.2.34, 8.3.35, 8.4.26 y 8.5.11. Mantener también validación de rutas en la aplicación.",
+    "url": "https://github.com/php/php-src/security/advisories/GHSA-9f67-6fw4-hpfp"
+  }
+] as const;
