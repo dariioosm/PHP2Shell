@@ -42,7 +42,10 @@ npm run build -- --base-href /php2shell/
 
 - Diseño brutalista minimalista con lila, verde lima, negro y blanco cálido.
 - Rejillas de tres, dos y una columna; adaptación a pantallas estrechas.
+- Cronología del descubrimiento y explicación del incidente.
 - Seis fichas editoriales con búsqueda, filtros y fuentes primarias.
+- Procedimiento de comprobación para Twinteach (Angular + Laravel).
+- Matriz de evidencias y límites de la detección de compromiso.
 - Comparador local de versiones, con límites explícitos y tratamiento de versiones desconocidas.
 - Checklist interactivo; el progreso se reinicia al recargar.
 - Detalles nativos HTML, navegación por teclado, foco visible, enlace para saltar al contenido y preferencia de movimiento reducido.
@@ -71,3 +74,7 @@ Compilación de producción y pruebas de límites de las cuatro ramas, versiones
 - Angular: https://angular.dev/tools/cli/deployment
 - Compatibilidad: https://angular.dev/reference/versions
 - GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+## Requisitos de la tarea
+
+Consulta `ENTREGA.md` para la correspondencia entre el enunciado y las secciones, y para actualizar un repositorio ya publicado.

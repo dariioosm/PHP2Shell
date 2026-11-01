@@ -59,3 +59,20 @@ Angular se ejecuta en el navegador. Las búsquedas y comparaciones no hacen soli
 ## Límites pendientes
 
 La selección no cubre todas las vulnerabilidades históricas ni certifica un producto de terceros. Las fechas y recomendaciones pueden quedar desactualizadas tras el corte editorial. Queda pendiente la publicación en el repositorio real del usuario, la ejecución allí de GitHub Actions y una prueba visual móvil. No se ha efectuado una auditoría de accesibilidad ni una evaluación de seguridad de infraestructuras reales.
+
+## Ampliación según el enunciado de Twinteach
+
+Se añadieron origen, cronología, un procedimiento para el stack Angular–Laravel y una matriz de investigación de compromiso. El nombre php2bash no se ha confirmado como denominación separada; la interpretación de PHP2Shell se hace explícita en la web y en ENTREGA.md.
+
+Fuentes primarias añadidas:
+
+- PHP Foundation, origen de los hallazgos y coordinación: https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/
+- Calif, relato de su descubrimiento: https://calif.io/php2shell/
+- Wiz, investigación independiente y contexto: https://www.wiz.io/blog/php2shell-php-rce
+- NCSC-NL, inventario operativo: https://github.com/NCSC-NL/php2shell
+- Delft Threat Intelligence Lab, observaciones de sensores: https://php2shell.delftintellab.com/
+- Laravel, configuración de despliegue: https://github.com/laravel/docs/blob/13.x/deployment.md
+
+Se priorizan los avisos actuales de PHP-src para asignar condiciones a cada CVE: los relatos de investigación pueden agrupar variantes de forma diferente. Se distingue evidencia de laboratorio, tráfico observado y compromiso confirmado. No se extrapolan los sensores de Delft a Twinteach. No se publican contadores que cambian cada pocos minutos ni indicadores de red sin su contexto y vigencia.
+
+La matriz de investigación es una propuesta técnica basada en las fuentes, no una lista oficial de firmas específicas. Las medidas de preservación, análisis de procesos, comparación de integridad y rotación de secretos se ofrecen como procedimiento general de respuesta ante compromiso; su utilidad depende de los registros, la arquitectura y las evidencias realmente disponibles.

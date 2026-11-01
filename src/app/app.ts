@@ -1,7 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
+import { IncidentOverview, TwinteachGuide, IncidentDetection } from './case-study';
 import { ADVISORIES } from './advisories';
 import { checkVersion } from './version-check';
-@Component({selector:'app-root', templateUrl:'./app.html'})
+@Component({selector:'app-root', imports:[IncidentOverview,TwinteachGuide,IncidentDetection], templateUrl:'./app.html'})
 export class App {
  readonly advisories=ADVISORIES;
  readonly query=signal(''); readonly category=signal('Todas');
